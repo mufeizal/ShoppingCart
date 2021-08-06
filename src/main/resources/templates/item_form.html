@@ -1,0 +1,33 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Item Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/cust_form.css}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div th:insert="~{header::header}"></div>
+<form action="#" th:action="@{saveitem}" th:object="${Item}" method="post" class="myform" >
+    <h2>Item Form</h2>
+    <hr>
+    <label>Item Name</label>
+    <input type="text" th:field="*{name}" class="form-control col-5">
+    <br>
+    <label>Item Price</label>
+    <input type="text" th:field="*{price}" class="form-control col-5">
+    <br>
+    <label>In Stock</label>
+    <input type="text" th:field="*{stock}" class="form-control col-5">
+    <br>
+    <input type="submit" class="btn btn-outline-dark" value="Save Item">
+    <a th:href="@{items}" class="btn btn-outline-primary">
+        Back
+    </a>
+</form>
+</body>
+</html>

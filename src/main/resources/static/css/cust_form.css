@@ -1,0 +1,14 @@
+.myform {
+ margin-left:400px;
+ margin-top:50px;
+}
+
+hr {
+ width:350px;
+ margin-left:0px;
+ border:1px solid;
+}
+
+input[type=text] {
+  width: 500px;
+}

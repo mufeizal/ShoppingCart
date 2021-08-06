@@ -1,0 +1,13 @@
+div nav{
+    background-color:#222831;
+    padding:4px;
+    margin-top:-7px;
+    margin-left:-5px;
+    width: 100%;
+}
+
+nav h2{
+    font-size:25px;
+    color:white;
+    margin-left:480px;
+}

@@ -1,0 +1,42 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div th:insert="~{header::header}"></div>
+<a th:href="@{addcustomer}" class="btn btn-primary add_cust">
+    Add Customer
+</a>
+<a th:href="@{items}" class="btn btn-danger add_item">
+    Items
+</a>
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>Customer Name</th>
+        <th>Customer Contact</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="a:${customers}">
+        <td th:text="${a.name}"></td>
+        <td th:text="${a.contact}"></td>
+        <td>
+            <a th:href="@{shop(customer=${a.name})}" class="btn btn-info">
+                Shop
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
